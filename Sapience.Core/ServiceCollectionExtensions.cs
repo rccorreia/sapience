@@ -10,6 +10,7 @@ namespace Sapience.Core
             services.AddSingleton(new QueueSettings(connectionString));
             services.AddSingleton<ICloudQueueClientFactory, CloudQueueClientFactory>();
             services.AddTransient<IQueueService, QueueService>();
+            services.AddSingleton<IAtualizarBalancoCommandHandler, AtualizarBalancoCommandHandler>();
             return services;
         }
     }
